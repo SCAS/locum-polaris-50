@@ -964,7 +964,7 @@ class locum_polaris_50 {
 
     if ( $holds_arr['StatusDescription'] == 'Cancelled' ) { return FALSE; }
 
-    if ( preg_match( '/active|ending/i', $holds_arr['StatusDescription'] ) ) {
+    if ( preg_match( '/active|ending|Held/i', $holds_arr['StatusDescription'] ) ) {
       $hold['bnum'] = $holds_arr['BibID'];
       $hold['requestid'] = $holds_arr['HoldRequestID'];
       $hold['title'] = ucwords( $holds_arr['Title'] );
